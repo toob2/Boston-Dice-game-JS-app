@@ -1,0 +1,193 @@
+//absolute center position mixin
+@mixin centered {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+}
+
+// flex mixin
+@mixin flex($flex-direction: row, $justify-content: space-between, $align-items: center) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+// button style mixin
+@mixin button($color,$background) {
+   display: inline-block;
+   text-transform: uppercase;
+   text-decoration: none;
+   border-radius: 100rem;
+   align-self: center;
+   font-size: 1.75rem;
+   padding: 1.5rem 3rem; 
+   background-color: $background;
+   color: $color;
+   font-weight: 500;
+   box-shadow: 1rem 1rem 3rem rgba(black, 0.45);
+   transition: all 0.15s ease-in-out;
+   -webkit-appearance: none;
+
+      &:hover {
+         transform: translateY(0.05rem);
+         box-shadow: 0.75rem 0.75rem 1.75rem rgba(black, 0.45);
+         background-color: darken($background, 5%);
+      }
+
+      &:active {
+         transform: translateY(0.1rem);
+         box-shadow: 0.6rem 0.6rem 1.75rem rgba(black, 0.45);
+         outline: none;
+      }
+}
+
+@mixin box-style {
+   padding-top: 5rem;
+   width: 100%;
+   text-align: center; 
+}
+
+// radio mixin
+@mixin radio {
+   visibility: visible;
+   content: '';
+   cursor: pointer;
+   position: absolute;
+   top: -0.2rem;
+   left: 0; 
+   width: 1.75rem;
+   height: 1.75rem;
+   border-radius: 50rem;
+}
+
+
+// Media Queries
+$widthMobileSmall: 320px;
+$widthMobileMedium: 375px;
+$widthMobileLarge: 425px;
+$widthMobileLargeLan: 730px;
+$widthTabletSmall: 768px;
+$widthTabletSmallLan: 900px;
+$widthTabletLarge: 1024px;
+$widthTabletLargeLan: 1100px;
+$widthDesktopSmall: 1280px;
+$widthDesktopLarge: 1600px;
+
+@mixin media ($condition) {
+   @if $condition==mob-sm {
+      @media only screen and
+      (min-width: #{$widthMobileSmall}) {@content;}
+   }
+
+   @else if $condition==mob-med {
+      @media only screen and
+      (min-width: #{$widthMobileMedium}) {@content;}
+   }
+
+   @else if $condition==mob-lg {
+      @media only screen and
+      (min-width: #{$widthMobileLarge}) {@content;}
+   }
+
+   @else if $condition==mob-lan {
+      @media only screen and
+      (orientation: landscape) {@content;}
+   }
+
+   @else if $condition==mob-lg-lan {
+      @media only screen and
+      (min-width: #{$widthMobileLargeLan}) and
+      (orientation: landscape) {@content;}
+   }
+
+   @else if $condition==tab-sm {
+      @media only screen and
+      (orientation: portrait) and
+      (min-width: #{$widthTabletSmall}) {@content;}
+   }
+
+   @else if $condition==tab-sm-lan {
+      @media only screen and
+      (orientation: landscape) and
+      (min-width: #{$widthTabletSmallLan}) {@content;}
+   }
+
+   @else if $condition==tab-lg {
+      @media only screen and
+      (orientation: portrait) and
+      (min-width: #{$widthTabletLarge}) {@content;}
+   }
+
+   @else if $condition==tab-lg-lan {
+      @media only screen and
+      (orientation: landscape) and
+      (min-width: #{$widthTabletLargeLan}) {@content;}
+   }
+
+   @else if $condition==desktop-sm {
+      @media only screen and
+      (min-width: #{$widthDesktopSmall}) {@content;}
+   }
+
+   @else if $condition==desktop-lg {
+      @media only screen and
+      (min-width: #{$widthDesktopLarge}) {@content;}
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Media Query Manager
+// // 0 - 600px: Default Phone
+// // 600-900px: Tablet portrait
+// // 900-1200px: Tablet landscape  
+// // 1200-1800: Desktop
+// // 1800px + : Big Desktop
+
+// @mixin respond ($breakpoint) {
+//    @if $breakpoint == tab-port {
+//       @media (min-width: 60rem) {@content};
+//    }
+
+//    @if $breakpoint == tab-lan {
+//       @media (min-width: 90rem) {@content};
+//    }
+
+//    @if $breakpoint == desktop {
+//       @media (max-width: 120rem) {@content};
+//    }
+
+//    @if $breakpoint == desktop-big {
+//       @media (max-width: 180rem) {@content};
+//    }
+// }

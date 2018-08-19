@@ -1,0 +1,59 @@
+.round {
+   width: 100%;
+   margin-top: 2rem;
+   font-size: 3rem;
+   @include flex(row,center,center);
+
+}
+
+.players {
+   margin-top: 5rem;
+   font-size: 3rem;
+   @include flex(row, space-around);
+
+   &__1 {
+      height: 30rem;
+      width: 20rem;
+      background-color: lightgray;   
+      @include flex(column, space-around);
+
+   }
+         
+   &__2 {
+      height: 30rem;
+      width: 20rem;
+      background-color: lightgray; 
+      @include flex(column, space-around); 
+      order: 1;
+   }
+
+   .active {
+      background-color: lighten(lightgray, $amount: 50%);
+   }
+}
+
+.dice {
+   height: 30rem;
+   width: 10rem;
+   background-color: rgb(190, 177, 177);
+   @include flex(column, space-around);
+
+      &__img {
+         width: 6rem;
+      }
+}
+
+.roll {
+   margin-top: 5rem;
+   width: 100%;
+   @include flex(row, center);
+
+      &__btn {
+         @include button(black, rgb(190, 177, 177));
+      }
+}
+
+
+
+
+
