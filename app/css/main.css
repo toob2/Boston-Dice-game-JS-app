@@ -415,7 +415,8 @@ body {
   color: #222222; }
 
 .heading__primary {
-  text-align: center; }
+  text-align: center;
+  font-size: 5rem; }
 
 .container {
   max-width: 1180px;
@@ -491,6 +492,10 @@ body {
     justify-content: space-around;
     align-items: center;
     order: 1; }
+  .players .round-score-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
   .players .active {
     background-color: white; }
 
