@@ -16,12 +16,10 @@ firstThrow = true;
 secondThrow = false;
 thirdThrow = false;
 
-
 diceDOM = document.querySelectorAll('.dice__img');
 
 document.querySelector('.roll__btn').addEventListener('click', function(){
    var dice1, dice2, dice3, diceArray;
-
    if (firstThrow){
       // set the state variables
       firstThrow = false;
@@ -58,33 +56,24 @@ document.querySelector('.roll__btn').addEventListener('click', function(){
             dice3DOM.style.display = 'none';
          }
       }
-
       setTimeout(removeHighest, 1000);
    };
 
+
+// SECOND THROW
    if (secondThrow){
       document.querySelector('.roll__btn').addEventListener('click', function(){
          secondThrow = false;
          thirdThrow = true;
-
-
       });
    }
 
-
-   
+// THIRD THROW
    if (thirdThrow){
       document.querySelector('.roll__btn').addEventListener('click', function(){
 
       })
    }
-
-
-
-   
-
-
-
 
 });
 
