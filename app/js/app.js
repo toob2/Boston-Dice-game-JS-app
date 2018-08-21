@@ -23,45 +23,77 @@ document.querySelector('.roll__btn').addEventListener('click', function(){
    var dice1, dice2, dice3, diceArray;
 
    if (firstThrow){
-   dice1 =  Math.floor(Math.random()*6) + 1;
-   dice2 =  Math.floor(Math.random()*6) + 1;
-   dice3 =  Math.floor(Math.random()*6) + 1;
+      // set the state variables
+      firstThrow = false;
+      secondThrow = true;
 
-   dice1DOM.style.display = 'block';
-   dice2DOM.style.display = 'block';
-   dice3DOM.style.display = 'block';
+      dice1 =  Math.floor(Math.random()*6) + 1;
+      dice2 =  Math.floor(Math.random()*6) + 1;
+      dice3 =  Math.floor(Math.random()*6) + 1;
 
-   diceArray = new Array(dice1, dice2, dice3);
-   
-   dice1DOM.src = "images/dice-" + diceArray[0] + ".svg";
-   dice2DOM.src = "images/dice-" + diceArray[1] + ".svg";
-   dice3DOM.src = "images/dice-" + diceArray[2] + ".svg";
+      dice1DOM.style.display = 'block';
+      dice2DOM.style.display = 'block';
+      dice3DOM.style.display = 'block';
 
-   //set timeout and run a function which removes the highest dice and display it in the DOM
-   highestNumber = Math.max(...diceArray);
-   
-   roundScoreDOM.innerHTML = highestNumber;
-   
-   //remove the highest Dice from the DOM
-   function removeHighest(){   
-      if (diceArray[0] === highestNumber){
-         dice1DOM.style.display = 'none';
+      diceArray = new Array(dice1, dice2, dice3);
+      
+      dice1DOM.src = "images/dice-" + diceArray[0] + ".svg";
+      dice2DOM.src = "images/dice-" + diceArray[1] + ".svg";
+      dice3DOM.src = "images/dice-" + diceArray[2] + ".svg";
+
+      //set timeout and run a function which removes the highest dice and display it in the DOM
+      highestNumber = Math.max(...diceArray);
+      
+      roundScoreDOM.innerHTML = highestNumber;
+      
+      //remove the highest Dice from the DOM
+      function removeHighest(){   
+         if (diceArray[0] === highestNumber){
+            dice1DOM.style.display = 'none';
+         }
+         else if (diceArray[1] === highestNumber && diceArray[0] !== highestNumber){
+            dice2DOM.style.display = 'none';
+         }
+         else if (diceArray[2] === highestNumber && diceArray[0] !== highestNumber && diceArray[1] !== highestNumber){
+            dice3DOM.style.display = 'none';
+         }
       }
-      else if (diceArray[1] === highestNumber && diceArray[0] !== highestNumber){
-         dice2DOM.style.display = 'none';
-      }
-      else if (diceArray[2] === highestNumber && diceArray[0] !== highestNumber && diceArray[1] !== highestNumber){
-         dice3DOM.style.display = 'none';
-      }
-    }
 
-   setTimeout(removeHighest, 2000);
+      setTimeout(removeHighest, 1000);
+   };
 
-   // set the state variable to false, its not working for some reason?
-   firstThrow = false;
-   secondThrow = true;
+   if (secondThrow){
+      document.querySelector('.roll__btn').addEventListener('click', function(){
+         secondThrow = false;
+         thirdThrow = true;
+
+
+      });
    }
+
+
+   
+   if (thirdThrow){
+      document.querySelector('.roll__btn').addEventListener('click', function(){
+
+      })
+   }
+
+
+
+   
+
+
+
+
 });
+
+
+   
+      
+    
+
+
 
 
 
