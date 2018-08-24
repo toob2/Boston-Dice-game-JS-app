@@ -1,27 +1,30 @@
+.container {
+   height: 50%;
+}
+
 .round {
    width: 100%;
-   margin-top: 2rem;
-   font-size: 3rem;
+   margin-top: 1rem;
+   font-size: 1.5rem;
    @include flex(row,center,center);
 }
 
 
 .players {
-   margin-top: 5rem;
-   font-size: 3rem;
+   height: 20rem;
+   margin-top: 1rem;
+   font-size: 1.5rem;
    @include flex(row, space-around);
 
    &__1 {
-      height: 30rem;
-      width: 20rem;
+      height: 100%;
       background-color: lightgray;   
       @include flex(column, space-around);
 
    }
          
    &__2 {
-      height: 30rem;
-      width: 20rem;
+      height: 100%;
       background-color: lightgray; 
       @include flex(column, space-around); 
       order: 1;
@@ -39,23 +42,24 @@
 }
 
 .dice {
-   height: 30rem;
-   width: 10rem;
+   height: 20rem;
+   width: 5rem;
    background-color: rgb(190, 177, 177);
    @include flex(column, space-around);
 
       &__img {
-         width: 6rem;
+         width: 3rem;
       }
 }
 
 .roll {
-   margin-top: 5rem;
+   margin-top: 3rem;
    width: 100%;
    @include flex(row, center);
 
       &__btn {
          @include button(black, rgb(190, 177, 177));
+         font-size: 1.5rem;
       }
 }
 

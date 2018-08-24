@@ -1,25 +1,42 @@
-var activePlayer, round, roundScore, setRounds, dice, dice1DOM, dice2DOM, dice3DOM, highestNumber,firstThrow, secondThrow, thirdThrow;
+const doc = document;
 
-dice1DOM = document.getElementById('dice-1');
-dice2DOM = document.getElementById('dice-2');
-dice3DOM = document.getElementById('dice-3');
+let activePlayer, round, roundScore, setRounds, dice, dice1DOM, dice2DOM, dice3DOM, highestNumber,firstThrow, secondThrow, thirdThrow;
 
-dice1DOM.style.display = 'none';
-dice2DOM.style.display = 'none';
-dice3DOM.style.display = 'none';
+dice1DOM = doc.getElementById('dice-1');
+dice2DOM = doc.getElementById('dice-2');
+dice3DOM = doc.getElementById('dice-3');
+
+function hideDice(){
+   dice1DOM.style.display = 'none';
+   dice2DOM.style.display = 'none';
+   dice3DOM.style.display = 'none';
+}
+
+function showDice(){
+   dice1DOM.style.display = 'block';
+   dice2DOM.style.display = 'block';
+   dice3DOM.style.display = 'block';
+}
+
+
+hideDice();
 
 roundScore = 0;
-document.querySelector('.round-score-0').innerHTML = roundScore;
-roundScoreDOM = document.querySelector('.round-score-0');
+doc.querySelector('.round-score-0').innerHTML = roundScore;
+roundScoreDOM = doc.querySelector('.round-score-0');
 activePlayer = 0;
 firstThrow = true;
 secondThrow = false;
 thirdThrow = false;
 
-diceDOM = document.querySelectorAll('.dice__img');
+diceDOM = doc.querySelectorAll('.dice__img');
 
-document.querySelector('.roll__btn').addEventListener('click', function(){
+
+
+// Roll dice 
+doc.querySelector('.roll__btn').addEventListener('click', function(){
    var dice1, dice2, dice3, diceArray;
+
    if (firstThrow){
       // set the state variables
       firstThrow = false;
@@ -29,9 +46,7 @@ document.querySelector('.roll__btn').addEventListener('click', function(){
       dice2 =  Math.floor(Math.random()*6) + 1;
       dice3 =  Math.floor(Math.random()*6) + 1;
 
-      dice1DOM.style.display = 'block';
-      dice2DOM.style.display = 'block';
-      dice3DOM.style.display = 'block';
+      showDice();
 
       diceArray = new Array(dice1, dice2, dice3);
       
@@ -62,7 +77,7 @@ document.querySelector('.roll__btn').addEventListener('click', function(){
 
 // SECOND THROW
    if (secondThrow){
-      document.querySelector('.roll__btn').addEventListener('click', function(){
+      doc.querySelector('.roll__btn').addEventListener('click', function(){
          secondThrow = false;
          thirdThrow = true;
       });
@@ -70,7 +85,7 @@ document.querySelector('.roll__btn').addEventListener('click', function(){
 
 // THIRD THROW
    if (thirdThrow){
-      document.querySelector('.roll__btn').addEventListener('click', function(){
+      doc.querySelector('.roll__btn').addEventListener('click', function(){
 
       })
    }
