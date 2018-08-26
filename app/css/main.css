@@ -14,9 +14,6 @@ body {
   text-align: center;
   font-size: 2rem; }
 
-.container {
-  height: 50%; }
-
 .round {
   width: 100%;
   margin-top: 1rem;
@@ -26,46 +23,47 @@ body {
   justify-content: center;
   align-items: center; }
 
-.players {
-  height: 20rem;
+.game {
+  height: 15rem;
   margin-top: 1rem;
   font-size: 1.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center; }
-  .players__1 {
+  .game__player-1 {
     height: 100%;
+    padding: 0.25rem;
     background-color: lightgray;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center; }
-  .players__2 {
+  .game__player-2 {
     height: 100%;
+    padding: 0.25rem;
     background-color: lightgray;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     order: 1; }
-  .players .round-score-wrapper {
+  .game .round-score-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center; }
-  .players .active {
+  .game .dice {
+    height: 100%;
+    width: 20%;
+    background-color: #beb1b1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; }
+    .game .dice__img {
+      width: 2.5rem; }
+  .game .active {
     background-color: white; }
-
-.dice {
-  height: 20rem;
-  width: 5rem;
-  background-color: #beb1b1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center; }
-  .dice__img {
-    width: 3rem; }
 
 .roll {
   margin-top: 3rem;
@@ -78,17 +76,17 @@ body {
     display: inline-block;
     text-transform: uppercase;
     text-decoration: none;
-    border-radius: 100rem;
+    border-radius: 2rem;
     align-self: center;
-    font-size: 1.25rem;
-    padding: 1.5rem 3rem;
+    font-size: 1rem;
+    padding: 1rem 2rem;
     background-color: #beb1b1;
     color: black;
     font-weight: 500;
     box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.45);
     transition: all 0.15s ease-in-out;
     -webkit-appearance: none;
-    font-size: 1.5rem; }
+    font-size: 1.25rem; }
     .roll__btn:hover {
       transform: translateY(0.05rem);
       box-shadow: 0.75rem 0.75rem 1.75rem rgba(0, 0, 0, 0.45);
