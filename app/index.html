@@ -13,38 +13,42 @@
 <body>
    <div class="container">
       <h1 class="heading__primary">Going to Boston</h1>
+
+      <div class="new-game">
+         <button class="new-game__btn" id="newGame">New Game</button>
+      </div>
+
       <div class="round">
          <h3>Round No. 1 out of 5</h3>
       </div>
 
       <div class="game">
-         <div class="game__player-1">
+         <div class="game__player-0 active">
             <div class="rounds-won">
                Rounds Won
             </div>
 
-            <div class="player-1-name">
+            <div class="player-0-name">
                Player 1
             </div>
 
             <div class="round-score-wrapper">Round Score
-               <div class="round-score-0">
-                  Round Score
+               <div id="round-score-0">
+                  0
                </div>
             </div>   
          </div>
 
-         <div class="game__player-2">
+
+         <div class="game__player-1">
             <div class="rounds-won">
                Rounds Won
             </div>
-
-            <div class="player-2-name">
+            <div class="player-1-name">
                Player 2
             </div>
-
             <div class="round-score-wrapper">Round Score
-               <div class="round-score-0">
+               <div id="round-score-1">
                   0
                </div>
             </div>   
@@ -59,7 +63,7 @@
       </div>
 
       <div class="roll">
-         <a href="#!" class="roll__btn" id="button">Roll The Dice!</a>
+         <button class="roll__btn" id="button">Roll The Dice!</button>
       </div>
 
    <script src="js/app.js"></script>

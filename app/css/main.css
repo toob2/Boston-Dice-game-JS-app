@@ -12,11 +12,46 @@ body {
 
 .heading__primary {
   text-align: center;
-  font-size: 2rem; }
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem; }
+
+.new-game {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+  .new-game__btn {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2rem;
+    align-self: center;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    background-color: #beb1b1;
+    color: black;
+    font-weight: 500;
+    box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.45);
+    transition: all 0.15s ease-in-out;
+    -webkit-appearance: none;
+    font-size: 1.25rem; }
+    .new-game__btn:hover {
+      transform: translateY(0.05rem);
+      box-shadow: 0.75rem 0.75rem 1.75rem rgba(0, 0, 0, 0.45);
+      background-color: #b2a3a3; }
+    .new-game__btn:active {
+      transform: translateY(0.1rem);
+      box-shadow: 0.6rem 0.6rem 1.75rem rgba(0, 0, 0, 0.45);
+      outline: none; }
 
 .round {
   width: 100%;
-  margin-top: 1rem;
+  height: 2rem;
+  margin-top: 0rem;
   font-size: 1.5rem;
   display: flex;
   flex-direction: row;
@@ -31,7 +66,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-items: center; }
-  .game__player-1 {
+  .game__player-0 {
     height: 100%;
     padding: 0.25rem;
     background-color: lightgray;
@@ -39,7 +74,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center; }
-  .game__player-2 {
+  .game__player-1 {
     height: 100%;
     padding: 0.25rem;
     background-color: lightgray;
@@ -63,7 +98,7 @@ body {
     .game .dice__img {
       width: 2.5rem; }
   .game .active {
-    background-color: white; }
+    background-color: #ac1c1c; }
 
 .roll {
   margin-top: 3rem;
