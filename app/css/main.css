@@ -83,6 +83,11 @@ body {
     justify-content: space-between;
     align-items: center;
     order: 1; }
+  .game .rounds-won {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; }
   .game .round-score-wrapper {
     display: flex;
     flex-direction: column;
@@ -99,6 +104,9 @@ body {
       width: 2.5rem; }
   .game .active {
     background-color: #ac1c1c; }
+  .game .winner {
+    background-color: gold;
+    border: 3px solid black; }
 
 .roll {
   margin-top: 3rem;

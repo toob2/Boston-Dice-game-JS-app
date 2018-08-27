@@ -42,6 +42,10 @@
       order: 1;
    }
 
+   .rounds-won {
+      @include flex(column, space-between, center); 
+   }
+
    .round-score-wrapper {
       display: flex;
       flex-direction: column;
@@ -53,7 +57,7 @@
       width: 20%;
       background-color: rgb(190, 177, 177);
       @include flex(column, space-around);
-   
+
          &__img {
             width: 2.5rem;
          }
@@ -63,7 +67,12 @@
       background-color: rgb(172, 28, 28);
    }
 
-   
+   .winner {
+      background-color: gold;
+      border: 3px solid black;
+   }
+
+
 }
 
 .roll {
