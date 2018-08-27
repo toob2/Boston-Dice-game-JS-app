@@ -26,8 +26,8 @@ function gameInit(){
    doc.querySelector('.game__player-0').classList.add('active');
    doc.querySelector('.player-0-name').innerHTML = 'PLAYER 1';
    doc.querySelector('.player-1-name').innerHTML = 'PLAYER 2';
-   doc.querySelector('.game__player-0').classList.add('winner');
-   doc.querySelector('.game__player-1').classList.add('winner');
+   doc.querySelector('.game__player-0').classList.remove('winner');
+   doc.querySelector('.game__player-1').classList.remove('winner');
 }
 
 function hideDice(){
