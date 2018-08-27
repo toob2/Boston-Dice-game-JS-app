@@ -1,5 +1,5 @@
 const doc = document;
-let activePlayer, btn, btnNG, counter, dice1, dice2, dice3, num1, num2, num3, rollArray1, rollArray2, highestNum1,  highestNum2, roundScore;
+let activePlayer, btn, btnNG, counter, counterRounds, dice1, dice2, dice3, num1, num2, num3, rollArray1, rollArray2, highestNum1,  highestNum2, roundScore;
 
 btn = doc.getElementById('button');
 btnNG = doc.getElementById('newGame');
@@ -9,6 +9,7 @@ dice3 = doc.getElementById('dice-3');
 
 activePlayer = 0;
 roundScore = [0,0];
+roundWon = [0,0];
 
 function gameInit(){
    hideDice();
@@ -18,6 +19,9 @@ function gameInit(){
    activePlayer = 0;
    doc.getElementById('round-score-0').innerHTML = 0;
    doc.getElementById('round-score-1').innerHTML = 0;
+   doc.querySelector('.game__player-0').classList.remove('active');
+   doc.querySelector('.game__player-1').classList.remove('active');
+   doc.querySelector('.game__player-0').classList.add('active');
 }
 
 function hideDice(){
@@ -36,6 +40,7 @@ function roll(){
 btnNG.addEventListener('click', gameInit);
 
 counter = 0;
+counterRounds = 0;
 btn.addEventListener('click', function(){   
    counter += 1;
    console.log(counter);
