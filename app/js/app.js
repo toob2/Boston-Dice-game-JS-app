@@ -23,6 +23,8 @@ function gameInit(){
    doc.getElementById('rounds-won-1').innerHTML = 0;
    doc.getElementById('round-score-0').innerHTML = 0;
    doc.getElementById('round-score-1').innerHTML = 0;
+   doc.querySelector('.game__player-0').classList.remove('active');
+   doc.querySelector('.game__player-1').classList.remove('active');
    doc.querySelector('.game__player-0').classList.add('active');
    doc.querySelector('.player-0-name').innerHTML = 'PLAYER 1';
    doc.querySelector('.player-1-name').innerHTML = 'PLAYER 2';
