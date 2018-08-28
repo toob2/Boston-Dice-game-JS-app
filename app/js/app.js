@@ -137,7 +137,7 @@ btn.addEventListener('click', function(){
 
    if(roundsWon[0] + roundsWon[1] === 5 && roundsWon[0] < roundsWon[1]){
       doc.querySelector('.player-1-name').innerHTML = 'WINNER';
-      doc.querySelector('.game__player-0').classList.add('winner');
+      doc.querySelector('.game__player-1').classList.add('winner');
       doc.querySelector('.game__player-0').classList.remove('active');
       doc.querySelector('.game__player-1').classList.remove('active');
    }
