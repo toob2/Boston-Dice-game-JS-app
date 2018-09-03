@@ -75,6 +75,7 @@ body {
     justify-content: space-between;
     align-items: center; }
   .game__player-1 {
+    position: relative;
     height: 100%;
     padding: 0.25rem;
     background-color: lightgray;
@@ -83,6 +84,19 @@ body {
     justify-content: space-between;
     align-items: center;
     order: 1; }
+  .game #arrowLeft {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    display: none;
+    color: black; }
+  .game #arrowRight {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    display: none; }
   .game .rounds-won {
     display: flex;
     flex-direction: column;
@@ -103,7 +117,8 @@ body {
     .game .dice__img {
       width: 2.5rem; }
   .game .active {
-    background-color: #ac1c1c; }
+    background-color: #ac1c1c;
+    position: relative; }
   .game .winner {
     background-color: gold;
     border: 3px solid black; }

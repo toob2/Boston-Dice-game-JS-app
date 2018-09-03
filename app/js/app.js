@@ -1,15 +1,21 @@
 const doc = document;
-let activePlayer, btn, btnNG, counter, counterRounds, dice1, dice2, dice3, num1, num2, num3, rollArray1, rollArray2, roundNo, highestNum1,  highestNum2, roundScore;
+let activePlayer, btn, btnNG, counter, counterRounds, dice1, dice2, dice3, num1, num2, num3, rollArray1, rollArray2, roundNo, highestNum1,  highestNum2, roundScore, arrowL, arrowR;
 
 btn = doc.getElementById('button');
 btnNG = doc.getElementById('newGame');
 dice1 = doc.getElementById('dice-1');
 dice2 = doc.getElementById('dice-2');
 dice3 = doc.getElementById('dice-3');
+arrowL = doc.getElementById('arrowLeft');
+arrowR = doc.getElementById('arrowRight');
+
+arrowL.style.display = 'block';
+
 
 activePlayer = 0;
 roundScore = [0,0];
 roundsWon = [0,0];
+
 
 function gameInit(){
    hideDice();
@@ -30,6 +36,8 @@ function gameInit(){
    doc.querySelector('.player-1-name').innerHTML = 'PLAYER 2';
    doc.querySelector('.game__player-0').classList.remove('winner');
    doc.querySelector('.game__player-1').classList.remove('winner');
+   arrowL.style.display = 'block';
+   arrowR.style.display = 'none';
 }
 
 function hideDice(){
@@ -94,18 +102,20 @@ btn.addEventListener('click', function(){
       doc.getElementById('round-score-' + activePlayer).innerHTML = roundScore[activePlayer];
    }
 
-   if(counter === 4){
-      hideDice();
-   }
+   // if(counter === 4){
+   //    hideDice();
+   // }
 
-   if(counter === 5 && activePlayer === 0){
+   if(counter === 4 && activePlayer === 0){
+      hideDice();
       activePlayer = 1;
       counter = 0;
       doc.querySelector('.game__player-0').classList.toggle('active');
       doc.querySelector('.game__player-1').classList.toggle('active');
    }
 
-   if(counter === 5 && activePlayer === 1){
+   if(counter === 4 && activePlayer === 1){
+      hideDice();
       activePlayer = 0;
       counter = 0;
       doc.querySelector('.game__player-0').classList.toggle('active');
@@ -140,6 +150,32 @@ btn.addEventListener('click', function(){
       doc.querySelector('.game__player-1').classList.add('winner');
       doc.querySelector('.game__player-0').classList.remove('active');
       doc.querySelector('.game__player-1').classList.remove('active');
+   }
+
+   if(roundsWon[0] > 3 && roundsWon[1] < 3){
+      doc.querySelector('.player-0-name').innerHTML = 'WINNER';
+      doc.querySelector('.game__player-0').classList.add('winner');
+      doc.querySelector('.game__player-0').classList.remove('active');
+      doc.querySelector('.game__player-1').classList.remove('active');
+      btn.disabled = true;
+   }
+
+   if(roundsWon[1] > 3 && roundsWon[0] < 3){
+      doc.querySelector('.player-1-name').innerHTML = 'WINNER';
+      doc.querySelector('.game__player-1').classList.add('winner');
+      doc.querySelector('.game__player-0').classList.remove('active');
+      doc.querySelector('.game__player-1').classList.remove('active');
+      btn.disabled = true;
+   }
+
+   if(activePlayer === 0){
+      arrowL.style.display = 'block';
+      arrowR.style.display = 'none';
+   }
+
+   if(activePlayer === 1){
+      arrowL.style.display = 'none';
+      arrowR.style.display = 'block';
    }
 })
 
